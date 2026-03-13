@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE WAY – Movimento Cristão Evangelístico</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome 6 CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              neon: '#8BED04',
+              blue: { brand: '#013EFB' },
+              navy: '#01112C',
+              offwhite: '#F8FFFE',
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            },
+            boxShadow: {
+              neon: '0 0 18px 4px rgba(139,237,4,0.45)',
+              'neon-sm': '0 0 10px 2px rgba(139,237,4,0.30)',
+              blue: '0 0 18px 4px rgba(1,62,251,0.45)',
+            },
+            keyframes: {
+              pulse_glow: {
+                '0%, 100%': { boxShadow: '0 0 12px 3px rgba(139,237,4,0.35)' },
+                '50%': { boxShadow: '0 0 28px 8px rgba(139,237,4,0.65)' },
+              },
+            },
+            animation: {
+              pulse_glow: 'pulse_glow 2.8s ease-in-out infinite',
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Scrollbar styling */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #000; }
+      ::-webkit-scrollbar-thumb { background: #8BED04; border-radius: 3px; }
+
+      /* Gradient text utility */
+      .text-gradient {
+        background: linear-gradient(135deg, #8BED04 0%, #013EFB 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Neon border glow on focus/hover */
+      .card-hover {
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-4px) scale(1.01);
+        box-shadow: 0 0 24px 6px rgba(139,237,4,0.35);
+        border-color: #8BED04;
+      }
+
+      /* Social pill hover */
+      .social-pill {
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      }
+      .social-pill:hover {
+        transform: scale(1.07);
+        box-shadow: 0 0 16px 4px rgba(139,237,4,0.45);
+        background-color: #8BED04 !important;
+        color: #000 !important;
+      }
+      .social-pill:hover * { color: #000 !important; }
+
+      /* Primary button hover */
+      .btn-primary {
+        transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+      }
+      .btn-primary:hover {
+        background-color: #013EFB;
+        color: #F8FFFE;
+        box-shadow: 0 0 20px 5px rgba(1,62,251,0.50);
+        transform: scale(1.04);
+      }
+
+      /* Event row hover */
+      .event-row {
+        transition: background-color 0.2s ease, transform 0.2s ease;
+      }
+      .event-row:hover {
+        background-color: rgba(139,237,4,0.07);
+        transform: translateX(4px);
+      }
+    </style>
+  </head>
+
+  <body class="bg-black font-sans antialiased text-offwhite">
+    <!-- =========================================================
+         WRAPPER
+    ========================================================= -->
+    <div class="min-h-screen flex flex-col items-center px-4 py-10 sm:py-14">
+      <div class="w-full max-w-lg flex flex-col gap-8">
+
+        <!-- =====================================================
+             1. HERO / HEADER
+        ===================================================== -->
+        <header class="flex flex-col items-center text-center gap-5">
+
+          <!-- Logo -->
+          <div class="flex flex-col items-center gap-2">
+            <div class="animate-pulse_glow rounded-full border-2 border-neon w-20 h-20 flex items-center justify-center mb-1">
+              <i class="fa-solid fa-route text-neon text-4xl"></i>
+            </div>
+            <h1 class="text-6xl sm:text-7xl font-black uppercase tracking-widest text-gradient leading-none">
+              THE WAY
+            </h1>
+          </div>
+
+          <!-- Verse -->
+          <blockquote class="border-l-4 border-neon pl-4 text-left max-w-sm">
+            <p class="text-xs font-semibold uppercase tracking-widest text-neon mb-1">Jo 14:6</p>
+            <p class="italic text-offwhite/80 text-sm leading-relaxed">
+              "DISSE-LHE JESUS: EU SOU O CAMINHO, E A VERDADE E A VIDA; NINGUÉM VEM AO PAI, SENÃO POR MIM."
+            </p>
+          </blockquote>
+
+          <!-- Mission statement -->
+          <p class="text-offwhite/70 text-sm leading-relaxed max-w-sm">
+            A <strong class="text-offwhite font-semibold">THE WAY</strong> é um movimento cristão evangelístico transcultural que anuncia Cristo, o próprio Caminho, conectando culturas e conduzindo vidas a Ele.
+          </p>
+
+          <!-- Thin divider -->
+          <div class="w-16 h-px bg-neon opacity-60"></div>
+        </header>
+
+        <!-- =====================================================
+             2. LINK BUTTONS / ACTION CARDS
+        ===================================================== -->
+        <section class="flex flex-col gap-4" aria-label="Links principais">
+
+          <!-- Devotion Team Way -->
+          <a
+            href="#"
+            class="card-hover rounded-2xl border border-white/10 bg-navy/60 backdrop-blur-sm p-5 flex items-start gap-4 group"
+            aria-label="Devotion Team Way – YouTube"
+          >
+            <span class="mt-1 flex-shrink-0 w-12 h-12 rounded-xl bg-red-600 flex items-center justify-center shadow-lg">
+              <i class="fa-brands fa-youtube text-white text-2xl"></i>
+            </span>
+            <div class="flex flex-col gap-1">
+              <span class="font-bold text-offwhite text-base uppercase tracking-wide group-hover:text-neon transition-colors duration-200">Devotion Team Way</span>
+              <span class="text-offwhite/60 text-xs leading-relaxed">
+                Em breve, nossos devocionais serão transmitidos pelo Youtube. Um tempo separado para ouvir, refletir e se fortalecer no caminho que é Cristo.
+              </span>
+            </div>
+          </a>
+
+          <!-- Lighthouse Podcast -->
+          <a
+            href="#"
+            class="card-hover rounded-2xl border border-white/10 bg-navy/60 backdrop-blur-sm p-5 flex items-start gap-4 group"
+            aria-label="Lighthouse Podcast"
+          >
+            <span class="mt-1 flex-shrink-0 w-12 h-12 rounded-xl bg-blue-brand flex items-center justify-center shadow-lg">
+              <i class="fa-solid fa-microphone-lines text-white text-2xl"></i>
+            </span>
+            <div class="flex flex-col gap-1">
+              <span class="font-bold text-offwhite text-base uppercase tracking-wide group-hover:text-neon transition-colors duration-200">Lighthouse Podcast</span>
+              <span class="text-offwhite/60 text-xs leading-relaxed">
+                Um podcast cristão para quem escolheu viver uma fé ativa, intensa e sem negociações.
+              </span>
+            </div>
+          </a>
+
+          <!-- The Way Bible Reading Club (featured) -->
+          <a
+            href="#"
+            class="card-hover relative overflow-hidden rounded-2xl border border-neon/50 bg-gradient-to-br from-navy to-black p-5 flex flex-col gap-4 group shadow-neon-sm"
+            aria-label="The Way Bible Reading Club"
+          >
+            <!-- Featured badge -->
+            <span class="absolute top-3 right-3 bg-neon text-black text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full">Em destaque</span>
+
+            <div class="flex items-start gap-4">
+              <span class="mt-1 flex-shrink-0 w-12 h-12 rounded-xl bg-neon flex items-center justify-center shadow-neon">
+                <i class="fa-solid fa-book-bible text-black text-2xl"></i>
+              </span>
+              <div class="flex flex-col gap-1">
+                <span class="font-black text-neon text-base uppercase tracking-wide">The Way Bible Reading Club</span>
+                <span class="text-offwhite/60 text-xs leading-relaxed">
+                  Clube de leitura bíblica para fortalecer sua jornada de fé com profundidade e comunidade.
+                </span>
+              </div>
+            </div>
+
+            <!-- Benefits list -->
+            <ul class="flex flex-col gap-2 pl-1">
+              <li class="flex items-center gap-2 text-sm text-offwhite/80">
+                <i class="fa-solid fa-check text-neon text-xs"></i>
+                <span>2 livros mensais</span>
+              </li>
+              <li class="flex items-center gap-2 text-sm text-offwhite/80">
+                <i class="fa-solid fa-check text-neon text-xs"></i>
+                <span>Mentoria via meet</span>
+              </li>
+              <li class="flex items-center gap-2 text-sm text-offwhite/80">
+                <i class="fa-solid fa-check text-neon text-xs"></i>
+                <span>Comunidade de membros</span>
+              </li>
+            </ul>
+
+            <!-- CTA -->
+            <span class="btn-primary inline-flex items-center justify-center gap-2 bg-neon text-black font-bold text-sm uppercase tracking-widest py-2.5 px-5 rounded-xl w-fit">
+              Participar
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </span>
+          </a>
+
+          <!-- Colisão -->
+          <a
+            href="#"
+            class="card-hover rounded-2xl border border-white/10 bg-navy/60 backdrop-blur-sm p-5 flex items-start gap-4 group"
+            aria-label="Colisão – Quadro no YouTube"
+          >
+            <span class="mt-1 flex-shrink-0 w-12 h-12 rounded-xl bg-yellow-400 flex items-center justify-center shadow-lg">
+              <i class="fa-solid fa-bolt text-black text-2xl"></i>
+            </span>
+            <div class="flex flex-col gap-1">
+              <span class="font-bold text-offwhite text-base uppercase tracking-wide group-hover:text-neon transition-colors duration-200">Colisão</span>
+              <span class="text-[10px] font-semibold uppercase tracking-widest text-neon/80">Quadro no Youtube</span>
+              <span class="text-offwhite/60 text-xs leading-relaxed">
+                Falando sobre pautas que afetam diretamente nossa caminhada cristã.
+              </span>
+            </div>
+          </a>
+
+        </section>
+
+        <!-- =====================================================
+             3. EVENTS SECTION
+        ===================================================== -->
+        <section
+          class="rounded-2xl border border-blue-brand/40 bg-gradient-to-br from-navy/80 to-black p-6 flex flex-col gap-5"
+          aria-label="Eventos"
+        >
+          <!-- Section header -->
+          <div class="flex flex-col gap-1">
+            <div class="flex items-center gap-2">
+              <i class="fa-regular fa-calendar-days text-blue-brand text-lg"></i>
+              <h2 class="text-xl font-black uppercase tracking-widest text-offwhite">The Way <span class="text-blue-brand" data-event-year-heading>2027</span></h2>
+            </div>
+            <div class="flex items-center gap-2 text-offwhite/50 text-xs">
+              <i class="fa-solid fa-location-dot text-neon text-xs"></i>
+              <span>Pernambuco, Brasil</span>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="w-full h-px bg-white/10"></div>
+
+          <!-- Event list -->
+          <ul class="flex flex-col gap-3">
+            <li>
+              <a
+                href="#"
+                class="event-row rounded-xl px-4 py-3 flex items-center gap-3 border border-white/5"
+                aria-label="The Way Run Challenge"
+              >
+                <span class="w-10 h-10 rounded-lg bg-neon/10 border border-neon/30 flex items-center justify-center flex-shrink-0">
+                  <i class="fa-solid fa-person-running text-neon text-lg"></i>
+                </span>
+                <div class="flex flex-col">
+                  <span class="font-bold text-offwhite text-sm uppercase tracking-wide">The Way Run Challenge</span>
+                  <span class="text-offwhite/40 text-xs" data-event-year>2027 · Pernambuco, Brasil</span>
+                </div>
+                <i class="fa-solid fa-chevron-right text-white/20 text-xs ml-auto"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="event-row rounded-xl px-4 py-3 flex items-center gap-3 border border-white/5"
+                aria-label="The Way Campfire"
+              >
+                <span class="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <i class="fa-solid fa-fire text-orange-400 text-lg"></i>
+                </span>
+                <div class="flex flex-col">
+                  <span class="font-bold text-offwhite text-sm uppercase tracking-wide">The Way Campfire</span>
+                  <span class="text-offwhite/40 text-xs" data-event-year>2027 · Pernambuco, Brasil</span>
+                </div>
+                <i class="fa-solid fa-chevron-right text-white/20 text-xs ml-auto"></i>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- =====================================================
+             4. FOOTER / SOCIALS
+        ===================================================== -->
+        <footer class="flex flex-col items-center gap-5 pt-2 pb-4">
+
+          <!-- Social pills -->
+          <div class="flex flex-wrap justify-center gap-3">
+            <a
+              href="#"
+              class="social-pill flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-offwhite"
+              aria-label="Instagram @theway.revival"
+            >
+              <i class="fa-brands fa-instagram text-neon text-base"></i>
+              <span>@theway.revival</span>
+            </a>
+            <a
+              href="#"
+              class="social-pill flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-offwhite"
+              aria-label="Loja @usetheway"
+            >
+              <i class="fa-solid fa-bag-shopping text-neon text-base"></i>
+              <span>@usetheway</span>
+            </a>
+          </div>
+
+          <!-- Copyright -->
+          <p class="text-offwhite/30 text-xs text-center">
+            © <span data-event-year-heading>2027</span> The Way Movement · Todos os direitos reservados
+          </p>
+        </footer>
+
+      </div>
+    </div>
+
+    <script>
+      /* Centralise the event year so it can be updated in one place */
+      const EVENT_YEAR = '2027';
+      document.querySelectorAll('[data-event-year]').forEach(function (el) {
+        el.textContent = EVENT_YEAR + ' · Pernambuco, Brasil';
+      });
+      document.querySelectorAll('[data-event-year-heading]').forEach(function (el) {
+        el.textContent = EVENT_YEAR;
+      });
+    </script>
+  </body>
+</html>
